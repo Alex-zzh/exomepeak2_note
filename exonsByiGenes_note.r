@@ -38,3 +38,46 @@ exonsByiGenes <- function(txdb){
         return(unique_exons_gene) ##最终得到的还是一个基因对应多个exon区间
     }
 }
+
+##最终结果
+# GRangesList object of length 11395:
+# $EWB00_000001
+# GRanges object with 6 ranges and 0 metadata columns:
+#         seqnames    ranges strand
+#            <Rle> <IRanges>  <Rle>
+#   [1] scaffold_1 2132-2441      +
+#   [2] scaffold_1 2485-2539      +
+#   [3] scaffold_1 4792-4978      +
+#   [4] scaffold_1 6046-6156      +
+#   [5] scaffold_1 6184-6288      +
+#   [6] scaffold_1 6502-6641      +
+#   -------
+#   seqinfo: 934 sequences from an unspecified genome; no seqlengths
+
+# $EWB00_000002
+# GRanges object with 4 ranges and 0 metadata columns:
+#         seqnames      ranges strand
+#            <Rle>   <IRanges>  <Rle>
+#   [1] scaffold_1   7206-7320      +
+#   [2] scaffold_1   8939-9070      +
+#   [3] scaffold_1 10259-10450      +
+#   [4] scaffold_1 11608-11885      +
+#   -------
+#   seqinfo: 934 sequences from an unspecified genome; no seqlengths
+
+# $EWB00_000003
+# GRanges object with 7 ranges and 0 metadata columns:
+#         seqnames      ranges strand
+#            <Rle>   <IRanges>  <Rle>
+#   [1] scaffold_1 19184-19700      -
+#   [2] scaffold_1 20355-21213      -
+#   [3] scaffold_1 22013-22108      -
+#   [4] scaffold_1 27481-27581      -
+#   [5] scaffold_1 27619-27771      -
+#   [6] scaffold_1 27809-28108      -
+#   [7] scaffold_1 30087-30296      -
+#   -------
+#   seqinfo: 934 sequences from an unspecified genome; no seqlengths
+
+# ...
+# <11392 more elements>
