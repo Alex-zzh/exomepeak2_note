@@ -1,7 +1,7 @@
 ## A function to extract exons grouped by unambiguous genes
 exonsByiGenes <- function(txdb){
     exbg <- exonsBy(txdb, by = "gene") ##按照show所有exon，每个基因中的exon按照start从小到大顺序
-    exbg <- exbg[elementNROWS(range(exbg)) == 1] ##只取每个基因所有exon最左端和最右端区间，保留
+    exbg <- exbg[elementNROWS(range(exbg)) == 1]
     fol <- findOverlaps(exbg) ##寻找基因区间之间的交集
     fol <- fol[queryHits(fol) != subjectHits(fol)] ##找出基因区间之间有交叉的基因
     ol_indx_M <- as.matrix(fol) ##取出所有有交集的基因区间对
@@ -35,6 +35,6 @@ exonsByiGenes <- function(txdb){
         split_indx <- rep(NA, length(rd_exons))
         split_indx[queryHits(fol)] <- names(exbg)[subjectHits(fol)] ##相当于给每个exon分配基因
         unique_exons_gene <- s plit(rd_exons, split_indx) #按照基因分配exon
-        return(unique_exons_gene)
+        return(unique_exons_gene) ##最终得到的还是一个基因对应多个exon区间
     }
 }
